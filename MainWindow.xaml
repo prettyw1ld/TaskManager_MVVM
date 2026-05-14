@@ -39,6 +39,6 @@
 
             <Button Margin="10" Command="{Binding OnClose}" Width="15" Height="15" HorizontalAlignment="Right"/>
         </Grid>
-        <Frame x:Name="frame" Content="{Binding CurrentPage}" NavigationUIVisibility="Hidden" Margin="0,50,0,0"/>
+        <Frame x:Name="frame" NavigationUIVisibility="Hidden" Margin="0,50,0,0"/>
     </Grid>
 </Window>

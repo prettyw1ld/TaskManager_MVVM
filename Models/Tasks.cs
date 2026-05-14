@@ -1,6 +1,7 @@
 ﻿using System.Text.RegularExpressions;
 using System.Windows;
 using TaskManager_Khodzhiev.Classes;
+using TaskManager_Khodzhiev.ViewModels;
 using Schema = System.ComponentModel.DataAnnotations.Schema;
 
 namespace TaskManager_Khodzhiev.Models
@@ -59,7 +60,11 @@ namespace TaskManager_Khodzhiev.Models
 					MessageBox.Show("Execution date cannot be in the past.", "Invalid Input", MessageBoxButton.OK, MessageBoxImage.Warning);
 				}
 				else
-					dateExecute = value; OnPropertyChanged("DateExecute");
+				{
+					dateExecute = value;
+					OnPropertyChanged("DateExecute");
+				}
+					
 			}
 		}
 
@@ -102,7 +107,8 @@ namespace TaskManager_Khodzhiev.Models
 			set
 			{
 				isEnable = value;
-				OnPropertyChanged("IsEnable"); OnPropertyChanged("IsEnableText");
+				OnPropertyChanged("IsEnable");
+				OnPropertyChanged("IsEnableText");
             }
         }
 
@@ -135,7 +141,7 @@ namespace TaskManager_Khodzhiev.Models
 				{
 					IsEnable = !IsEnable;
 					if (!IsEnable)
-						(MainWindow.init.DataContext as ViewModels.VM_Pages).SaveChanges();
+						((VM_Pages)MainWindow.init.DataContext).vm_tasks.tasksContext.SaveChanges();
 				});
 			}
 		}
@@ -149,9 +155,9 @@ namespace TaskManager_Khodzhiev.Models
                 {
                     if(MessageBox.Show("Are you sure you want to delete this task?", "Confirm Deletion", MessageBoxButton.YesNo, MessageBoxImage.Warning) == MessageBoxResult.Yes)
                     {
-                        (MainWindow.init.DataContext as ViewModels.VM_Pages).vm_tasks.Tasks.Remove(this);
-                        (MainWindow.init.DataContext as ViewModels.VM_Pages).vm_tasks.tasksContext.Remove(this);
-                        (MainWindow.init.DataContext as ViewModels.VM_Pages).vm_tasks.tasksContext.SaveChanges();
+                        ((VM_Pages)MainWindow.init.DataContext).vm_tasks.Tasks.Remove(this);
+                        ((VM_Pages)MainWindow.init.DataContext).vm_tasks.tasksContext.Remove(this);
+                        ((VM_Pages)MainWindow.init.DataContext).vm_tasks.tasksContext.SaveChanges();
                     }
                 });
             }

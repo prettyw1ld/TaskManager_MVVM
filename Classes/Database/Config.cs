@@ -9,7 +9,7 @@ namespace TaskManager_Khodzhiev.Classes.Database
 {
     public class Config
     {
-        public static readonly string Connection = "server=localhost;uid=root;password=;database=TaskManager;;";
+        public static readonly string Connection = "server=localhost;uid=root;password=;database=TaskManagerMVVM;;";
         public static readonly MySqlServerVersion Version = new MySqlServerVersion(new Version(8, 0, 32));
     }
 }
