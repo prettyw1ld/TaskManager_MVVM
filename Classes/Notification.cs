@@ -3,7 +3,7 @@ using System.ComponentModel;
 
 namespace TaskManager_Khodzhiev.Classes
 {
-    class BaseViewModel : INotifyPropertyChanged
+    public class Notification : INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler? PropertyChanged;
 
