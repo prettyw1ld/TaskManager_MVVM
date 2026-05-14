@@ -8,7 +8,7 @@ namespace TaskManager_Khodzhiev.Models
 {
 	public class Tasks : Notification
 	{
-		public int Id { get; set; }
+        public int Id { get; set; }
 
 		private string name;
 		public string Name
@@ -94,7 +94,8 @@ namespace TaskManager_Khodzhiev.Models
 			set
 			{
 				done = value;
-				OnPropertyChanged("Done"); OnPropertyChanged("IsDoneText");
+				OnPropertyChanged("Done");
+				OnPropertyChanged("IsDoneText");
             }
 		}
 
