@@ -8,6 +8,7 @@ namespace TaskManager_Khodzhiev.Models
 {
 	public class Tasks : Notification
 	{
+
         public int Id { get; set; }
 
 		private string name;

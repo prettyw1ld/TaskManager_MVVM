@@ -5,7 +5,7 @@ namespace TaskManager_Khodzhiev.ViewModels
 {
     class VM_Pages : Notification
     {
-	    public VM_Tasks vm_tasks = new();
+	    public VM_Tasks vm_tasks { get; } = new();
         public VM_Pages()
         {
             MainWindow.init.frame.Navigate(new View.Main(vm_tasks));

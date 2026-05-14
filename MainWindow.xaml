@@ -20,9 +20,7 @@
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="{x:Type Button}">
-                        <Border Background="{TemplateBinding Background}" BorderBrush="#00FFFF00">
-                            <ContentPresenter/>
-                        </Border>
+                        <Border Background="{TemplateBinding Background}" BorderBrush="#00FFFF00"/>
                     </ControlTemplate>
                 </Setter.Value>
             </Setter>
@@ -35,7 +33,8 @@
                 <DropShadowEffect Color="Black" Direction="270" ShadowDepth="2" Opacity="0.5"/>
             </Grid.Effect>
             <Image Source="/Images/sticky-note.png" HorizontalAlignment="Left" Width="30" Height="30" Margin="10"/>
-            <Label Content="Заказчик" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="18"/>
+            <Label Content="Задачник" VerticalContentAlignment="Center" Margin="50,0,0,0" HorizontalContentAlignment="Left" FontSize="18"/>
+            <TextBox Text="{Binding vm_tasks.SearchText, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Center" Width="500" Height="25" Margin="50,0,0,0"/>
 
             <Button Margin="10" Command="{Binding OnClose}" Width="15" Height="15" HorizontalAlignment="Right"/>
         </Grid>
