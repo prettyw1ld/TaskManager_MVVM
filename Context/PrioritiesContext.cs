@@ -2,15 +2,15 @@
 using TaskManager_Khodzhiev.Classes.Database;
 using TaskManager_Khodzhiev.Models;
 
-namespace TaskManager_Khodzhiev.Classes
+namespace TaskManager_Khodzhiev.Context
 {
-    class TasksContext : DbContext
+    public class PrioritiesContext : DbContext
     {
-        public DbSet<Tasks> Tasks { get; set; }
-        public TasksContext()
+        public DbSet<Priorities> Priorities { get; set; }
+        public PrioritiesContext()
         {
             Database.EnsureCreated();
-            Tasks.Load();
+            Priorities.Load();
         }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {

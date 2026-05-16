@@ -30,22 +30,14 @@ namespace TaskManager_Khodzhiev.Models
 			}
 		}
 
-		private string priority;
-		public string Priority
+		private int priority;
+		public int Priority
 		{
 			get { return priority; }
 			set
 			{
-				Match match = Regex.Match(value, "^.{1,30}$");
-				if (!match.Success)
-				{
-					MessageBox.Show("Priority must be between 1 and 30 characters long.", "Invalid Input", MessageBoxButton.OK, MessageBoxImage.Warning);
-				}
-				else
-				{
-					priority = value;
-					OnPropertyChanged("Priority");
-				}
+				priority = value;
+				OnPropertyChanged("Priority");
 			}
 		}
 
